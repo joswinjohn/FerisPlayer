@@ -6,3 +6,5 @@ Make sure the following dll's are in the same directory
 
 Run "FerisPlayer.exe"
 Select a song from the Music Folder and click ▶
+
+![alt text](https://github.com/joswinjohn/FerisPlayer/blob/main/Screenshot.png?raw=true)
