@@ -66,6 +66,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -98,6 +99,30 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\repeat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PngItem_3952157.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PngItem_3952157 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\repeatico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\repeat-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\repeat-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shuffle-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh-2-32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -11,9 +11,9 @@ namespace FerisPlayer
 {
     public class Functions
     {
-        public static void PopulateListBox(ListBox lsb, string Folder, string FileType)
+        public static void PopulateListBox(ListBox lsb, string folder, string FileType)
         {
-            DirectoryInfo dinfo = new DirectoryInfo(Folder);
+            DirectoryInfo dinfo = new DirectoryInfo(folder);
             FileInfo[] Files = dinfo.GetFiles(FileType);
             foreach (FileInfo file in Files)
             {

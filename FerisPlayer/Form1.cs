@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,18 +23,44 @@ namespace FerisPlayer
             InitializeComponent();
         }
 
+        bool IsDirectoryEmpty(string path)
+        {
+            return !Directory.EnumerateFileSystemEntries(path).Any();
+        }
+
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            wplayer.URL = $"./Music/{listBox1.SelectedItem}";
-            wplayer.controls.stop();
+            string selectpath = AppDomain.CurrentDomain.BaseDirectory + "Music" + listBox1.SelectedItem;
+            if (selectpath.Contains(".mp3") || selectpath.Contains(".MP3"))
+            {
+                wplayer.URL = $"./Music/{listBox1.SelectedItem}";
+                wplayer.controls.stop();
+            } else
+            {
+                MessageBox.Show("Select an MP3 File");
+            }
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            string path = AppDomain.CurrentDomain.BaseDirectory + "Music";
+
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
+
+
             listBox1.Items.Clear();
             Functions.PopulateListBox(listBox1, "./Music", "*.mp3");
-            string path = AppDomain.CurrentDomain.BaseDirectory + "Music";
-            wplayer.newPlaylist("pMain", path);
+
+            if (IsDirectoryEmpty(path))
+            {
+                listBox1.Items.Add("Add MP3's to \"Music\" Folder");
+            }
+
+            wplayer.settings.volume = trackBar2.Value;
         }
 
         string dur = "0:00";
@@ -53,12 +80,12 @@ namespace FerisPlayer
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (looptimer.Enabled == true)
+            if (wplayer.settings.getMode("loop") == true)
             {
-                looptimer.Enabled = false;
+                wplayer.settings.setMode("loop", false);
             } else
             {
-                looptimer.Enabled = true;
+                wplayer.settings.setMode("loop", true);
             }
         }
 
@@ -85,7 +112,7 @@ namespace FerisPlayer
 
         private void autoplay_Tick(object sender, EventArgs e)
         {
-	        if (looptimer.Enabled == false && wplayer.playState == WMPLib.WMPPlayState.wmppsStopped)
+	        if (wplayer.settings.getMode("loop") == false && wplayer.playState == WMPLib.WMPPlayState.wmppsStopped)
             {
                 int index = listBox1.SelectedIndex + 1;
                 listBox1.SetSelected(index, true);
@@ -141,6 +168,38 @@ namespace FerisPlayer
             wplayer.controls.currentPosition = trackBar1.Value;
             timer4.Enabled = true;
             wplayer.controls.play();
+        }
+
+        private void trackBar2_Scroll(object sender, EventArgs e)
+        {
+            wplayer.settings.volume = trackBar2.Value * 2;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Random rnd = new Random();
+            int sufl = rnd.Next(1, listBox1.Items.Count);
+
+            listBox1.SetSelected(sufl, true);
+            wplayer.controls.play();
+            autoplaytimer.Enabled = true;
+
+            timer3.Enabled = true;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            string repath = AppDomain.CurrentDomain.BaseDirectory + "Music";
+
+            listBox1.Items.Clear();
+            Functions.PopulateListBox(listBox1, "./Music", "*.mp3");
+
+            if (IsDirectoryEmpty(repath))
+            {
+                listBox1.Items.Add("Add MP3's to \"Music\" Folder");
+            }
+
+            wplayer.settings.volume = trackBar2.Value;
         }
     }
 }
