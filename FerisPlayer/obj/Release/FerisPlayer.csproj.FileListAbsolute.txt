@@ -1,0 +1,15 @@
+C:\Users\joswi\Documents\Feris\FerisPlayer\FerisPlayer\bin\Release\FerisPlayer.exe.config
+C:\Users\joswi\Documents\Feris\FerisPlayer\FerisPlayer\bin\Release\FerisPlayer.exe
+C:\Users\joswi\Documents\Feris\FerisPlayer\FerisPlayer\bin\Release\FerisPlayer.pdb
+C:\Users\joswi\Documents\Feris\FerisPlayer\FerisPlayer\bin\Release\Interop.WMPLib.dll
+C:\Users\joswi\Documents\Feris\FerisPlayer\FerisPlayer\bin\Release\AxInterop.WMPLib.dll
+C:\Users\joswi\Documents\Feris\FerisPlayer\FerisPlayer\obj\Release\FerisPlayer.csprojAssemblyReference.cache
+C:\Users\joswi\Documents\Feris\FerisPlayer\FerisPlayer\obj\Release\Interop.WMPLib.dll
+C:\Users\joswi\Documents\Feris\FerisPlayer\FerisPlayer\obj\Release\AxInterop.WMPLib.dll
+C:\Users\joswi\Documents\Feris\FerisPlayer\FerisPlayer\obj\Release\FerisPlayer.csproj.ResolveComReference.cache
+C:\Users\joswi\Documents\Feris\FerisPlayer\FerisPlayer\obj\Release\FerisPlayer.Form1.resources
+C:\Users\joswi\Documents\Feris\FerisPlayer\FerisPlayer\obj\Release\FerisPlayer.Properties.Resources.resources
+C:\Users\joswi\Documents\Feris\FerisPlayer\FerisPlayer\obj\Release\FerisPlayer.csproj.GenerateResource.cache
+C:\Users\joswi\Documents\Feris\FerisPlayer\FerisPlayer\obj\Release\FerisPlayer.csproj.CoreCompileInputs.cache
+C:\Users\joswi\Documents\Feris\FerisPlayer\FerisPlayer\obj\Release\FerisPlayer.exe
+C:\Users\joswi\Documents\Feris\FerisPlayer\FerisPlayer\obj\Release\FerisPlayer.pdb
